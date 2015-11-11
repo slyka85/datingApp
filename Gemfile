@@ -11,6 +11,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+
+gem 'pry'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -43,3 +45,14 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass'
+gem 'omniauth-facebook'
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+gem 'simple_form'
+gem "cancan"
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+gem "figaro"
+gem 'utf8-cleaner'
