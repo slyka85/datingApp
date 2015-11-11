@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
 	end
 
 	def self.create_user_from_facebook(auth)
-		binding.pry
 		create(
 			avatar: process_uri(auth['info']['image'] + "?width=9999"),
 			email: auth['info']['email'],
@@ -48,6 +47,26 @@ class User < ActiveRecord::Base
 			self.friendships.where(friend_id: user2).first.destroy
 		end
 
+	end
+
+	#  Gender preferences
+	def self.gender(user)
+		case user.interest
+			when "Male"
+			where('gender = ?', 'male')
+			when "Female" 
+			where('gender = ?', 'female')
+			else
+			all
+		end
+	end
+
+		def self.not_me(user)
+		where.not(id: user.id)
+	end
+
+		def matches(current_user)
+		friendships.where(state: "pending").map(&:friend) + current_user.friendships.where(state: "ACTIVE").map(&:friend) + current_user.inverse_friendships.where(state: "ACTIVE").map(&:user) 
 	end
 
 	private
