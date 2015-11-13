@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
 		session[:omniauth] = auth
 		user = User.sign_in_from_facebook(auth)
 		session[:user_id] = user.id
-		redirect_to root_url, notice: "Signed in"
+		redirect_to root_path
 	end
 	def destroy
 		session[:user_id] = nil
 		session[:omniauth] = nil
-		redirect_to root_url, notice: "Signed out"
+		redirect_to root_path
 	end
 
 end
