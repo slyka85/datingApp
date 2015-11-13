@@ -31,14 +31,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'sqlite3'
 
 group :development, :test do
 	gem 'rubocop'
 	gem 'byebug'
 	gem 'web-console', '~> 2.0'
 	gem 'spring'
-	gem 'sqlite3'
+	# gem 'sqlite3'
 	gem 'capistrano', '~> 3.1'
 	gem 'capistrano-rails', '~> 1.1'
 	gem 'capistrano-passenger' 
@@ -46,8 +46,8 @@ end
 
 
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+  # gem 'pg'
+  # gem 'rails_12factor'
 end
 
 gem 'bootstrap-sass'
