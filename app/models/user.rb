@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.name = auth.info.name
       # user.avatar = auth.info.image
-      user.avatar = process_uri(auth['info']['image'] + "?width=9999")
+      user.avatar = process_uri(auth.info.image)
     end
 		# create(
 		# 	avatar: process_uri(auth['info']['image'] + "?width=9999"),
