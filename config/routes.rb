@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     end
   end
   
-  get   'auth/facebook/callback', to: "sessions#create"
+  # get   '/auth/facebook/callback', to: "sessions#create"
+  match '/auth/facebook/callback' => 'sessions#create', via: [:get, :post] 
   match '/sign_out', to: "sessions#destroy", via: :delete
 
   post   'create_friendship' => "friendships#create"
