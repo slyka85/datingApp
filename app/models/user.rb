@@ -12,17 +12,26 @@ class User < ActiveRecord::Base
 	end
 
 	def self.create_user_from_facebook(auth)
-		create(
-			avatar: process_uri(auth['info']['image'] + "?width=9999"),
+
+
+		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      # user.email = auth.info.email
+      user.name = auth.info.name
+      user.avatar = auth.info.image
+    end
+		# create(
+		# 	avatar: process_uri(auth['info']['image'] + "?width=9999"),
 			# email: auth['info']['email'],
-			provider: auth['provider'],
-			uid: auth['uid'],
-			name: auth['info']['name']
+			# provider: auth['provider'],
+			# uid: auth['uid'],
+			# name: auth['info']['name']
 			# gender: auth['extra']['raw_info']['gender'],
 			# date_of_birth: auth['extra']['raw_info']['birthday'],
 			# location: auth['info']['location'],
 			# bio: auth['extra']['raw_info']['bio']
-			)
+			# )
 
 	end
 
