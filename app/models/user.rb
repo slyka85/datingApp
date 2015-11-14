@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
       # user.email = auth.info.email
       user.name = auth.info.name
       # user.avatar = auth.info.image
-      # user.avatar = process_uri(auth.info.image)
+      user.avatar = process_uri(auth.info.image)
    #    user.gender = auth.extra.raw_info.gender
 			# user.date_of_birth =  auth.extra.raw_info.birthday,
 			# user.location = auth.info.location
@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
 	private
 	def self.process_uri(uri)
 		avatar_url = URI.parse(uri)
-		avatar_url.scheme = 'http'
+		avatar_url.scheme = 'https'
 		avatar_url.to_s
 	end
 
