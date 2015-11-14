@@ -14,19 +14,13 @@ class User < ActiveRecord::Base
 	def self.create_user_from_facebook(auth)
 
 
-		create(
-			avatar: auth.info.image.gsub('http://','https://'),
-			email: auth['info']['email'],
-			provider: auth['provider'],
-			uid: auth['uid'],
-			name: auth['info']['name']
-			gender: auth['extra']['raw_info']['gender'],
-			date_of_birth: auth['extra']['raw_info']['birthday'],
-			location: auth['info']['location'],
-			bio: auth['extra']['raw_info']['bio']
-			)
+where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
 	end
+end
 
 
 	# Friendship Methods
