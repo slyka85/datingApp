@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
 
 		create(
-			avatar: process_uri(auth['info']['image'] + "?width=9999"),
+			avatar: auth.info.image.gsub('http://','https://'),
 			email: auth['info']['email'],
 			provider: auth['provider'],
 			uid: auth['uid'],
