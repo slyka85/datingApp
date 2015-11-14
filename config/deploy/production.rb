@@ -24,7 +24,8 @@
 role :app, %w{deploy@104.236.239.143}
 role :web, %w{deploy@104.236.239.143}
 role :db, %w{deploy@104.236.239.143}, :primary => true
-set :branch, "production"
+# set :branch, "production"
+set :branch, "master"
 set :rails_env, "production"
 set :deploy_to, "/var/www/datingApp_production"
 
