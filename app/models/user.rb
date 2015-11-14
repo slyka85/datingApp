@@ -84,11 +84,17 @@ class User < ActiveRecord::Base
 	end
 
 	private
+	# def self.process_uri(uri)
+	# 	avatar_url = URI.parse(uri)
+	# 	avatar_url.scheme = 'https'
+	# 	avatar_url.to_s
+	# end
 	def self.process_uri(uri)
-		avatar_url = URI.parse(uri)
-		avatar_url.scheme = 'https'
-		avatar_url.to_s
-	end
+  require 'open-uri'
+  require 'open_uri_redirections'
+  open(uri, :allow_redirections => :safe) do |r|
+    r.base_uri.to_s
+  end
 
 
 end
