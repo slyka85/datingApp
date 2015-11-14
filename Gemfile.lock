@@ -249,9 +249,9 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   cancan
-  capistrano (~> 3.1)
-  capistrano-passenger
-  capistrano-rails (~> 1.1)
+  capistrano (~> 3.4)
+  capistrano-passenger (~> 0.1.1)
+  capistrano-rails (~> 1.1, >= 1.1.5)
   coffee-rails (~> 4.1.0)
   data-confirm-modal!
   figaro

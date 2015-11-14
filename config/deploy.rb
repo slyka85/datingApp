@@ -1,11 +1,11 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'datingApp'
+set :application, 'edate'
 set :repo_url, 'git@github.com:slyka85/datingApp.git'
 
-set :user, "deploy"
-set :stages, %w(production staging)
+set :user, "rails"
+set :stages, %w(production)
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

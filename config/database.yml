@@ -21,15 +21,9 @@ test:
   database: db/test.sqlite3
 
 
-staging:
- <<: *default
- database: datingApp_staging
- username: deploy
- password: <%= ENV["DATABASE_PASSWORD" ] %>
- 
 production:
  <<: *default
  database: datingApp_production
- username: deploy
+ username: rails
  password: <%= ENV["DATABASE_PASSWORD" ] %>
 

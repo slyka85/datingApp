@@ -21,10 +21,9 @@
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :app, %w{deploy@104.236.239.143}
-role :web, %w{deploy@104.236.239.143}
-role :db, %w{deploy@104.236.239.143}, :primary => true
-# set :branch, "production"
+role :app, %w{rails@192.241.166.229}
+role :web, %w{rails@192.241.166.229}
+role :db, %w{rails@192.241.166.229}, :primary => true
 set :branch, "master"
 set :rails_env, "production"
 set :deploy_to, "/var/www/datingApp_production"

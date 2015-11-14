@@ -39,9 +39,9 @@ group :development, :test do
 	gem 'web-console', '~> 2.0'
 	gem 'spring'
 	# gem 'sqlite3'
-	gem 'capistrano', '~> 3.1'
-	gem 'capistrano-rails', '~> 1.1'
-	gem 'capistrano-passenger' 
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-rails', '~> 1.1', '>= 1.1.5'
+  gem 'capistrano-passenger', '~> 0.1.1'
 end
 
 
