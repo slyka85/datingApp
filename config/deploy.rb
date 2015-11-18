@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'edate'
+set :application, 'datingApp'
 set :repo_url, 'git@github.com:slyka85/datingApp.git'
 
 set :user, "rails"
