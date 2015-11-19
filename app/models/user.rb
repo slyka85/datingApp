@@ -20,6 +20,7 @@ where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.uid = auth.uid
       user.name = auth.info.name
       user.avatar = process_uri(auth.info.image)
+      user.gender = auth.extra.raw_info.gender
 	end
 end
 
