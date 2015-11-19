@@ -25,5 +25,5 @@ production:
   <<: *default
   database: datingApp_production
   username: rails
-  password: <%= ENV["DATABASE_PASSWORD"]%>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
