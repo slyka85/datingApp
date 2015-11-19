@@ -24,6 +24,7 @@ where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.date_of_birth =  auth.extra.raw_info.birthday
       user.location = auth.info.location
       user.bio = auth.extra.raw_info.bio
+      user.email = auth.info.email
 	end
 end
 
